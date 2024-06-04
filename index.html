@@ -5,113 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FM Browser</title>
     <style>
-        /* Füge hier deine benutzerdefinierten CSS-Stile hinzu */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-            background-image: url('1.jpg'); /* Replace 'YOUR_IMAGE_URL' with the URL of your background image */
+            font-family: 'Open Sans', sans-serif;
+            background-image: url('1.jpg');
             background-size: cover;
             background-position: center;
-            animation: fadeIn 1s ease-out; /* Animation beim Laden der Seite */
+            margin: 0;
+            padding: 0;
+            color: #f9f9f9;
         }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+
         .header {
-            background-color: #333;
-            color: #fff;
+            background-color: #121212;
+            color: #f9f9f9;
             text-align: center;
             padding: 40px 20px;
-            animation: slideInDown 1s ease-out; /* Animation für den Header */
+            animation: slideInDown 1s ease-out;
         }
+
         .content {
+            max-width: 800px;
             margin: 50px auto;
-            max-width: 400px;
             padding: 20px;
-            background-color: #ffffff;
+            background-color: #121212;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            animation: slideInUp 1s ease-out; /* Animation für den Inhalt */
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+            animation: slideInUp 1s ease-out;
         }
-        input[type="text"],
-        input[type="submit"],
-        button {
-            width: 100%;
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin: 10px;
+            background-image: url('logo.png');
+            background-size: contain;
+            background-position: center;
+            border-radius: 50%;
+        }
+
+        .search-bar {
+            width: 80%;
             padding: 10px;
             border: 1px solid #4285f4;
             border-radius: 3px;
-            font-size: 14px;
-            margin-bottom: 10px;
-            transition: background-color 0.3s ease; /* Sanfter Farbüergang bei Hover */
+            font-size: 16px;
+            margin: 20px auto;
+            transition: background-color 0.3s ease;
+            color: #f9f9f9;
         }
-        input[type="text"]:focus,
-        input[type="submit"]:focus,
-        button:focus {
+
+        .search-bar:focus {
             outline: none;
+            background-color: #333;
         }
-        input[type="text"]::placeholder {
+
+        .search-bar::placeholder {
             color: #ccc;
         }
-        input[type="submit"],
-        button {
-            background-color: #4285f4;
-            color: #fff;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover,
-        button:hover {
-            background-color: #3367d6;
-        }
-        .example-links a {
-            display: block;
-            margin-bottom: 10px;
-            color: #4285f4;
-            text-decoration: none;
-            transition: color 0.3s ease; /* Sanfter Farbüergang bei Hover */
-        }
-        .example-links a:hover {
-            color: #3367d6;
-        }
+
         .password-generator,
         .url-scanner {
             margin-top: 20px;
-            animation: fadeIn 1s ease-out; /* Animation für die Abschnitte */
+            animation: fadeIn 1s ease-out;
         }
+
         .password-generator h3,
         .url-scanner h3 {
             color: #4285f4;
             margin-top: 0;
         }
+
+        .password-generator input[type="text"] {
+            background-color: #333;
+            border: none;
+            color: #f9f9f9;
+            width: 80%;
+            padding: 10px;
+            margin: 20px auto;
+        }
+
+        .url-scanner input[type="text"] {
+            background-color: #333;
+            border: none;
+            color: #f9f9f9;
+            width: 80%;
+            padding: 10px;
+            margin: 20px auto;
+        }
+
+        .url-scanner button {
+            background-color: #4285f4;
+            color: #f9f9f9;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 20px auto;
+            font-size: 18px;
+        }
+
+        .url-scanner button:hover {
+            background-color: #212121;
+        }
+
+        .password-generator button {
+            background-color: #4285f4;
+            color: #f9f9f9;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 20px auto;
+            font-size: 18px;
+        }
+
+        .password-generator button:hover {
+            background-color: #212121;
+        }
     </style>
 </head>
 <body>
-    <div class="header">Welcome to the FM Browser</div>
+    <div class="header">
+        <div class="logo"></div>
+        <h1>Welcome to the FM Browser</h1>
+    </div>
     <div class="content">
         <form method="get" action="https://www.google.de/search" target="_blank">
-            <input name="q" type="text" size="45" maxlength="255" placeholder="Search with Google" />
-            <input type="submit" value="Search" />
+            <input class="search-bar" name="q" type="text" size="45" maxlength="255" placeholder="Search with Google" />
+            <input type="submit" value="Search" style="padding: 15px 30px; font-size: 18px;" />
         </form>
-        <div class="example-links">
-            <a href="https://www.youtube.com">YouTube</a>
-            <a href="https://copilot.microsoft.com">Co Pilot</a>
-            <a href="https://www.virustotal.com/gui/home/url">Virus Total</a>
-            <a href="https://fabischau1.github.io/FA_Software/">FA Antivira</a>
-            <a href="https://discord.com">Discord</a>
-        </div>
         <div class="password-generator">
-            <h3>Passwort-Generator</h3>
+            <h3>Password Generator</h3>
             <button onclick="generatePassword()">Generate Password</button>
             <input type="text" id="password" readonly>
         </div>
         <div class="url-scanner">
-            <h3>URL-Scanner</h3>
+            <h3>URL Scanner</h3>
             <input type="text" id="urlInput" placeholder="Type in a url">
             <button onclick="scanUrl()">Scan</button>
             <p id="scanResult"></p>
