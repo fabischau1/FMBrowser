@@ -15,7 +15,7 @@
             color: #f9f9f9;
         }
 
-        .header {
+       .header {
             background-color: #121212;
             color: #f9f9f9;
             text-align: center;
@@ -23,7 +23,7 @@
             animation: slideInDown 1s ease-out;
         }
 
-        .content {
+       .content {
             max-width: 800px;
             margin: 50px auto;
             padding: 20px;
@@ -33,7 +33,7 @@
             animation: slideInUp 1s ease-out;
         }
 
-        .logo {
+       .logo {
             width: 40px;
             height: 40px;
             margin: 10px;
@@ -43,7 +43,7 @@
             border-radius: 50%;
         }
 
-        .search-bar {
+       .search-bar {
             width: 80%;
             padding: 10px;
             border: 1px solid #4285f4;
@@ -54,28 +54,28 @@
             color: #f9f9f9;
         }
 
-        .search-bar:focus {
+       .search-bar:focus {
             outline: none;
             background-color: #333;
         }
 
-        .search-bar::placeholder {
+       .search-bar::placeholder {
             color: #ccc;
         }
 
-        .password-generator,
-        .url-scanner {
+       .password-generator,
+       .url-scanner {
             margin-top: 20px;
             animation: fadeIn 1s ease-out;
         }
 
-        .password-generator h3,
-        .url-scanner h3 {
+       .password-generator h3,
+       .url-scanner h3 {
             color: #4285f4;
             margin-top: 0;
         }
 
-        .password-generator input[type="text"] {
+       .password-generator input[type="text"] {
             background-color: #333;
             border: none;
             color: #f9f9f9;
@@ -84,7 +84,7 @@
             margin: 20px auto;
         }
 
-        .url-scanner input[type="text"] {
+       .url-scanner input[type="text"] {
             background-color: #333;
             border: none;
             color: #f9f9f9;
@@ -93,35 +93,59 @@
             margin: 20px auto;
         }
 
-        .url-scanner button {
+       .url-scanner button {
             background-color: #4285f4;
             color: #f9f9f9;
             border: none;
-            padding: 15px 30px;
+            padding: 10px 20px;
             border-radius: 3px;
             cursor: pointer;
             transition: background-color 0.3s ease;
             margin: 20px auto;
-            font-size: 18px;
+            font-size: 16px;
         }
 
-        .url-scanner button:hover {
+       .url-scanner button:hover {
             background-color: #212121;
         }
 
-        .password-generator button {
+       .password-generator button {
             background-color: #4285f4;
             color: #f9f9f9;
             border: none;
-            padding: 15px 30px;
+            padding: 10px 20px;
             border-radius: 3px;
             cursor: pointer;
             transition: background-color 0.3s ease;
             margin: 20px auto;
-            font-size: 18px;
+            font-size: 16px;
         }
 
-        .password-generator button:hover {
+       .password-generator button:hover {
+            background-color: #212121;
+        }
+
+       .quick-access {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+       .quick-access-button {
+            background-color: #333;
+            color: #f9f9f9;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+            font-size: 16px;
+            animation: fadeIn 1s ease-out;
+        }
+
+       .quick-access-button:hover {
             background-color: #212121;
         }
     </style>
@@ -132,30 +156,41 @@
         <h1>Welcome to the FM Browser</h1>
     </div>
     <div class="content">
-        <form method="get" action="https://www.google.de/search" target="_blank">
+        <form method="get" action="https://www.google.de/search">
             <input class="search-bar" name="q" type="text" size="45" maxlength="255" placeholder="Search with Google" />
-            <input type="submit" value="Search" style="padding: 15px 30px; font-size: 18px;" />
+            <input type="submit" value="Search" style="padding: 10px 20px; font-size: 16px;" />
         </form>
         <div class="password-generator">
             <h3>Password Generator</h3>
-            <button onclick="generatePassword()">Generate Password</button>
+            <button onclick="generatePassword()" style="padding: 10px 20px; font-size: 16px;">Generate Password</button>
             <input type="text" id="password" readonly>
         </div>
         <div class="url-scanner">
             <h3>URL Scanner</h3>
             <input type="text" id="urlInput" placeholder="Type in a url">
-            <button onclick="scanUrl()">Scan</button>
+            <button onclick="scanUrl()" style="padding: 10px 20px; font-size: 16px;">Scan</button>
             <p id="scanResult"></p>
         </div>
-		<div>
-		<h3><a href="https://fabischau1.github.io/FA_Software/">Click Here To Install Other Programms From fabischau</a></h3>
-		</div>
+        <div>
+            <h3><a href="https://fabischau1.github.io/FA_Software/">Click Here To Install Other Programms From fabischau</a></h3>
+        </div>
+        <div class="quick-access">
+            <button class="quick-access-button" onclick="location.href='https://discord.com'">Discord</button>
+            <button class="quick-access-button" onclick="location.href='https://www.youtube.com'">YouTube</button>
+            <button class="quick-access-button" onclick="location.href='https://www.virustotal.com/'">VirusTotal</button>
+            <button class="quick-access-button" onclick="location.href='https://www.instagram.com'">Instagram</button>
+            <button class="quick-access-button" onclick="location.href='https://x.com'">Twitter</button>
+            <button class="quick-access-button" onclick="location.href='https://www.github.com'">GitHub</button>
+            <button class="quick-access-button" onclick="location.href='https://www.tiktok.com'">TikTok</button>
+            <button class="quick-access-button" onclick="location.href='https://copilot.microsoft.com'">Co Pilot AI</button>
+            <button class="quick-access-button" onclick="location.href='https://www.reddit.com'">Reddit</button>
+        </div>
     </div>
 
     <script>
         function generatePassword() {
-            var length = 14;
-            var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var length = 20;
+            var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@|/*-+,._!$%&{()=?[]}\~";
             var password = "";
             for (var i = 0; i < length; i++) {
                 password += charset.charAt(Math.floor(Math.random() * charset.length));
@@ -175,4 +210,3 @@
         }
     </script>
 </body>
-</html>
