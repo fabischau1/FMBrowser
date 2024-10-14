@@ -3,210 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FM Browser</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FMBrowser - Sichere Zukunft</title>
     <style>
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-image: url('2.jpg');
-            background-size: cover;
-            background-position: center;
+        * {
             margin: 0;
             padding: 0;
-            color: #f9f9f9;
+            box-sizing: border-box;
         }
 
-       .header {
-            background-color: #121212;
-            color: #f9f9f9;
+        body {
+            background: linear-gradient(135deg, #0d0d0d, #292929);
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+            padding-top: 20px; /* Added padding to push everything down */
+        }
+
+        .container {
             text-align: center;
-            padding: 40px 20px;
-            animation: slideInDown 1s ease-out;
-        }
-
-       .content {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #121212;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-            animation: slideInUp 1s ease-out;
-        }
-
-       .logo {
-            width: 40px;
-            height: 40px;
-            margin: 10px;
-            background-image: url('logo.png');
-            background-size: contain;
-            background-position: center;
-            border-radius: 50%;
-        }
-
-       .search-bar {
             width: 80%;
-            padding: 10px;
-            border: 1px solid #4285f4;
-            border-radius: 3px;
-            font-size: 16px;
-            margin: 20px auto;
-            transition: background-color 0.3s ease;
-            color: #f9f9f9;
+            max-width: 1200px;
         }
 
-       .search-bar:focus {
+        header {
+            margin-bottom: 40px; /* Increased space below the header */
+        }
+
+        header h1 {
+            font-size: 5rem;
+            margin-bottom: 10px;
+            color: #00c6ff;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: fadeInDown 1s ease-in-out;
+            font-weight: 700;
+        }
+
+        .slogan {
+            font-size: 1.8rem;
+            color: #fff;
+            opacity: 0.8;
+            animation: fadeInDown 1.2s ease-in-out;
+        }
+
+        .search-container {
+            margin: 50px 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .search-bar {
+            width: 60%;
+            padding: 18px;
+            border: none;
+            border-radius: 40px;
             outline: none;
-            background-color: #333;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 1.5rem; /* Zurück zur größeren Schriftgröße */
+            transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
-       .search-bar::placeholder {
-            color: #ccc;
+        .search-bar:focus {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
         }
 
-       .password-generator,
-       .url-scanner {
-            margin-top: 20px;
-            animation: fadeIn 1s ease-out;
-        }
-
-       .password-generator h3,
-       .url-scanner h3 {
-            color: #4285f4;
-            margin-top: 0;
-        }
-
-       .password-generator input[type="text"] {
-            background-color: #333;
+        .search-button {
+            padding: 18px 30px;
             border: none;
-            color: #f9f9f9;
-            width: 80%;
-            padding: 10px;
-            margin: 20px auto;
-        }
-
-       .url-scanner input[type="text"] {
-            background-color: #333;
-            border: none;
-            color: #f9f9f9;
-            width: 80%;
-            padding: 10px;
-            margin: 20px auto;
-        }
-
-       .url-scanner button {
-            background-color: #4285f4;
-            color: #f9f9f9;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 3px;
+            border-radius: 40px;
+            margin-left: 10px;
+            background-color: #00c6ff;
+            color: #fff;
+            font-size: 1.5rem; /* Größere Schrift für Konsistenz */
             cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin: 20px auto;
-            font-size: 16px;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
 
-       .url-scanner button:hover {
-            background-color: #212121;
+        .search-button:hover {
+            background-color: #0099cc;
+            transform: scale(1.05);
         }
 
-       .password-generator button {
-            background-color: #4285f4;
-            color: #f9f9f9;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 3px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin: 20px auto;
-            font-size: 16px;
+        .security-info {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+            animation: fadeIn 2s ease-in-out;
         }
 
-       .password-generator button:hover {
-            background-color: #212121;
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            width: 40%;
+            text-align: left;
+            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+            box-shadow: 0 0 20px rgba(0, 198, 255, 0.1);
         }
 
-       .quick-access {
-            margin-top: 40px;
+        .info-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 30px rgba(0, 198, 255, 0.3);
+        }
+
+        .info-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* New section for suggestion blocks */
+        .suggestions {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            margin-top: 60px;
         }
 
-       .quick-access-button {
-            background-color: #333;
-            color: #f9f9f9;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 3px;
+        .suggestion-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 15px;
+            border-radius: 15px;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin: 10px;
-            font-size: 16px;
-            animation: fadeIn 1s ease-out;
+            box-shadow: 0 0 15px rgba(0, 198, 255, 0.2);
+            text-decoration: none; /* Remove underline for links */
+            color: #fff; /* Text color for links */
         }
 
-       .quick-access-button:hover {
-            background-color: #212121;
+        .suggestion-card:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 25px rgba(0, 198, 255, 0.3);
+        }
+
+        .suggestion-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            margin-top: 60px;
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="logo"></div>
-        <h1>Welcome to the FM Browser</h1>
-    </div>
-    <div class="content">
-        <form method="get" action="https://www.google.de/search">
-            <input class="search-bar" name="q" type="text" size="45" maxlength="255" placeholder="Search with Google" />
-            <input type="submit" value="Search" style="padding: 10px 20px; font-size: 16px;" />
-        </form>
-        <div class="password-generator">
-            <h3>Password Generator</h3>
-            <button onclick="generatePassword()" style="padding: 10px 20px; font-size: 16px;">Generate Password</button>
-            <input type="text" id="password" readonly>
+    <div class="container">
+        <header>
+            <h1>FMBrowser</h1>
+            <p class="slogan">Dein sicherer Zugang zur digitalen Welt</p>
+        </header>
+        
+        <div class="search-container">
+            <form id="searchForm" action="https://duckduckgo.com/" method="get">
+                <input type="text" name="q" placeholder="Sicher suchen..." class="search-bar" required />
+                <button type="submit" class="search-button">Suche</button>
+            </form>
         </div>
-        <div class="url-scanner">
-            <h3>URL Scanner</h3>
-            <input type="text" id="urlInput" placeholder="Type in a url">
-            <button onclick="scanUrl()" style="padding: 10px 20px; font-size: 16px;">Scan</button>
-            <p id="scanResult"></p>
-        </div>
-        <div>
-            <h3><a href="https://fabischau1.github.io/FA_Software/">Click Here To Install Other Programms From fabischau</a></h3>
-        </div>
-        <div class="quick-access">
-            <button class="quick-access-button" onclick="location.href='https://discord.com'">Discord</button>
-            <button class="quick-access-button" onclick="location.href='https://www.youtube.com'">YouTube</button>
-            <button class="quick-access-button" onclick="location.href='https://www.virustotal.com/'">VirusTotal</button>
-            <button class="quick-access-button" onclick="location.href='https://www.instagram.com'">Instagram</button>
-            <button class="quick-access-button" onclick="location.href='https://x.com'">Twitter</button>
-            <button class="quick-access-button" onclick="location.href='https://www.github.com'">GitHub</button>
-            <button class="quick-access-button" onclick="location.href='https://www.tiktok.com'">TikTok</button>
-            <button class="quick-access-button" onclick="location.href='https://copilot.microsoft.com'">Co Pilot AI</button>
-            <button class="quick-access-button" onclick="location.href='https://www.reddit.com'">Reddit</button>
-        </div>
+        
+        <section class="security-info">
+            <div class="info-card">
+                <h2>🔒 Sicherheit an erster Stelle</h2>
+                <p>Alle deine Daten werden mit modernster Technologie geschützt. Keine Verfolgung, keine Spionage.</p>
+            </div>
+            <div class="info-card">
+                <h2>🛡️ Vollständiger Datenschutz</h2>
+                <p>FMBrowser bietet dir absolute Anonymität. Keine Protokolle, keine Hintertüren.</p>
+            </div>
+        </section>
+
+        <!-- New suggestions section -->
+        <section class="suggestions">
+            <a href="https://fabischau1.github.io/FAAntivira/" class="suggestion-card">
+                <h3>FA AntiVira</h3>
+                <p>Schütze dich vor Viren.</p>
+            </a>
+            <a href="https://fabischau1.github.io/FMOS/" class="suggestion-card">
+                <h3>FMOS</h3>
+                <p>Das sichere Betriebssystem.</p>
+            </a>
+            <a href="https://www.virustotal.com/gui/home/upload" class="suggestion-card">
+                <h3>VirusTotal</h3>
+                <p>Scanne Dateien und Links.</p>
+            </a>
+            <a href="https://www.youtube.com" class="suggestion-card">
+                <h3>YouTube</h3>
+                <p>Videos und Tutorials.</p>
+            </a>
+            <a href="https://www.tiktok.com/" class="suggestion-card">
+                <h3>TikTok</h3>
+                <p>Die neuesten Trends.</p>
+            </a>
+            <a href="https://www.wikipedia.org" class="suggestion-card">
+                <h3>Wikipedia</h3>
+                <p>Wissen für alle.</p>
+            </a>
+            <a href="https://github.com" class="suggestion-card">
+                <h3>GitHub</h3>
+                <p>Code und Collaboration.</p>
+            </a>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 FMBrowser | Design für die Zukunft</p>
+        </footer>
     </div>
 
     <script>
-        function generatePassword() {
-            var length = 20;
-            var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@|/*-+,._!$%&{()=?[]}\~";
-            var password = "";
-            for (var i = 0; i < length; i++) {
-                password += charset.charAt(Math.floor(Math.random() * charset.length));
-            }
-            document.getElementById("password").value = password;
-        }
-
-        function scanUrl() {
-            var url = document.getElementById("urlInput").value;
-            if (url.startsWith("http://")) {
-                document.getElementById("scanResult").innerText = "Die URL '" + url + "' has unsafe data transfer.";
-            } else if (url.startsWith("https://")) {
-                document.getElementById("scanResult").innerText = "Die URL '" + url + "' has safe data transfer.";
-            } else {
-                document.getElementById("scanResult").innerText = "The URL is not available.";
-            }
-        }
+        // Keine zusätzlichen JavaScript-Animationen nötig; Smooth scrolling und Interactionen kommen durch CSS
     </script>
 </body>
+</html>
